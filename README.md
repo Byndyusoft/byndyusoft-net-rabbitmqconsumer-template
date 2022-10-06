@@ -7,6 +7,7 @@
 
 ## Создание сервиса из шаблона
 `dotnet new bsrabbitconsumer -n {Название сервиса}` - создание в текущей директории
+
 `dotnet new bsrabbitconsumer -o {Название сервиса}` - создание директории с сервисом
 
 # Maintainers
