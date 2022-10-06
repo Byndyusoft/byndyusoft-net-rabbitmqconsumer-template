@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageType>Template</PackageType>
+		<PackageVersion>0.1.0</PackageVersion>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+		<PackageId>Byndyusoft.Net.RabbitMqConsumerTemplate</PackageId>
+		<Title>Byndyusoft.Net.RabbitMqConsumerTemplate</Title>
+		<Authors>Byndyusoft</Authors>
+		<Description>Byndyusoft .Net RabbitMq consumer service template</Description>
+		<PackageTags>dotnet-new;templates</PackageTags>
+		<TargetFramework>netstandard2.1</TargetFramework>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="template\**\*;" Exclude="template\**\bin\**;template\**\obj\**;.vs\**" />
+		<Compile Remove ="**\*" />
+	</ItemGroup>	
+
+</Project>
