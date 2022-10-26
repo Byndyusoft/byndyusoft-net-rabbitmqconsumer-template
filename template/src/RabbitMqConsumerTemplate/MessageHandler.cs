@@ -5,7 +5,7 @@ using Contracts;
 
 public class MessageHandler : IMessageHandler
 {
-    public async Task<ConsumeResult> OnMessageReceivedHandler(MessageContract? message, CancellationToken cancellationToken)
+    public async Task<ConsumeResult> OnMessageReceived(MessageContract? message, CancellationToken cancellationToken)
     {
         //TODO: implement message processing here
 

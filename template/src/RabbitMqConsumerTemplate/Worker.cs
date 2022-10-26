@@ -33,14 +33,13 @@ public class Worker : BackgroundService
         await _rabbitMqClient.CreateExchangeIfNotExistsAsync(exchangeName,
                                                              options => options.AsDurable(true).AsAutoDelete(false),
                                                              stoppingToken);
-
         using var consumer =
             _rabbitMqClient
-                .SubscribeAsJson<MessageContract>(queueName, _messageHandler.OnMessageReceivedHandler)
+                .SubscribeAsJson<MessageContract>(queueName, _messageHandler.OnMessageReceived)
                 // we can get message as JsonElement if we don't know type beforehand:
                 //.SubscribeAsJson<JsonElement>(queueName, OnMessageJsonElement) 
                 .WithDeclareSubscribingQueue(options => options.AsDurable(true).AsAutoDelete(false))
-                .WithQueueBinding(exchangeName, routingKey)
+                .WithSubscribingQueueBinding(exchangeName, routingKey)
                 .WithPrefetchCount(prefetchCount)
                 .WithDeclareErrorQueue(options => options.AsDurable(true).AsAutoDelete(false))
                 .WithConstantTimeoutRetryStrategy(retryPeriod,

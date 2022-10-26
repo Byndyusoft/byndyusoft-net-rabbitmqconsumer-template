@@ -5,5 +5,5 @@ using Contracts;
 
 public interface IMessageHandler
 {
-    Task<ConsumeResult> OnMessageReceivedHandler(MessageContract? message, CancellationToken cancellationToken);
+    Task<ConsumeResult> OnMessageReceived(MessageContract? message, CancellationToken cancellationToken);
 }
