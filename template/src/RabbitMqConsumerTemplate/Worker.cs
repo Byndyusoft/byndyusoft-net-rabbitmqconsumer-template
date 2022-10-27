@@ -54,9 +54,6 @@ public class Worker : BackgroundService
                                retryPeriod,
                                maxRetryCount);
 
-        var message = new MessageContract { Property = "example message" };
-        await _rabbitMqClient.PublishAsJsonAsync(exchangeName, routingKey, message, cancellationToken: stoppingToken);
-
         await Task.Delay(Timeout.Infinite, stoppingToken);
     }
 }
