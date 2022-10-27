@@ -1,4 +1,4 @@
-namespace Contracts;
+namespace RabbitMqConsumerTemplate.Contracts;
 
 public class MessageContract
 {

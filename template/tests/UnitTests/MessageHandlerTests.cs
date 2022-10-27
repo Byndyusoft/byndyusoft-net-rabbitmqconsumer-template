@@ -1,8 +1,8 @@
-namespace UnitTests;
+namespace RabbitMqConsumerTemplate.UnitTests;
 
 using Byndyusoft.Messaging.RabbitMq;
-using Contracts;
 using RabbitMqConsumerTemplate;
+using Contracts;
 
 [TestFixture]
 public class MessageHandlerTests
