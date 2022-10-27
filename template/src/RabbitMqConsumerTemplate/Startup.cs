@@ -1,7 +1,6 @@
 namespace RabbitMqConsumerTemplate;
 
 using System.Text.Json.Serialization;
-using Infrastructure.Metrics;
 using Infrastructure.Swagger;
 using Infrastructure.Versioning;
 using Installers;
@@ -53,7 +52,6 @@ public class Startup
         app.UseHealthChecks("/healthz")
            .UseMetricServer()
            .UseRouting()
-           .UseRequestsMetrics()
            .UseEndpoints(endpoints => endpoints.MapControllers());
     }
 }
