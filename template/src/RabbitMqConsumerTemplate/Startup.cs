@@ -1,7 +1,6 @@
 namespace RabbitMqConsumerTemplate;
 
 using System.Text.Json.Serialization;
-using Infrastructure.Versioning;
 using Installers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,9 +31,6 @@ public class Startup
             .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
         services.AddHealthChecks();
-
-        services
-            .AddVersioning();
 
         services.AddApplicationServices();
     }
