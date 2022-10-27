@@ -1,7 +1,6 @@
 namespace RabbitMqConsumerTemplate;
 
 using System.Text.Json.Serialization;
-using Infrastructure.Swagger;
 using Infrastructure.Versioning;
 using Installers;
 using Microsoft.AspNetCore.Builder;
@@ -35,8 +34,7 @@ public class Startup
         services.AddHealthChecks();
 
         services
-            .AddVersioning()
-            .AddSwagger();
+            .AddVersioning();
 
         services.AddApplicationServices();
     }
@@ -46,9 +44,6 @@ public class Startup
         IWebHostEnvironment env,
         IApiVersionDescriptionProvider apiVersionDescriptionProvider)
     {
-        if (env.IsProduction() == false)
-            app.UseSwagger(apiVersionDescriptionProvider);
-
         app.UseHealthChecks("/healthz")
            .UseMetricServer()
            .UseRouting()
