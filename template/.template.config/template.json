@@ -10,13 +10,5 @@
         "type": "project"
     },
     "shortName": "bsrabbitconsumer",
-    "projectUrl": "https://github.com/Byndyusoft/byndyusoft-net-rabbitmqconsumer-template",
-	"guids" : [
-		"30ED4E69-0207-427A-8960-7C25F23A5890",
-		"405F5547-8285-4EE5-8528-40FA960E8108",
-		"6E95FAEF-A74E-4F07-945D-006F27339076",
-		"BC904843-1DDE-4D9B-91D8-8114A4809839",
-		"D230A5C0-6D02-4EE0-97E4-AAE950E7BD66",
-		"D230A5C0-6D02-4EE0-97E4-AAE950E7BD66"
-	]
+    "projectUrl": "https://github.com/Byndyusoft/byndyusoft-net-rabbitmqconsumer-template"
 }
