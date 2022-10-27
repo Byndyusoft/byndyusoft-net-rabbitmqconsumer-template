@@ -1,6 +1,5 @@
 namespace RabbitMqConsumerTemplate;
 
-using System.Text.Json.Serialization;
 using Installers;
 using Microsoft.AspNetCore.Builder;
 using Prometheus;
@@ -18,15 +17,6 @@ public class Startup
     {
         var rabbitConnectionString = _configuration.GetConnectionString("Rabbit");
         services.AddRabbitMqClient(options => { options.ConnectionString = rabbitConnectionString; });
-
-        services
-            .AddMvcCore()
-            .AddTracing();
-
-        services
-            .AddRouting(options => options.LowercaseUrls = true)
-            .AddControllers()
-            .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
         services.AddHealthChecks();
 
