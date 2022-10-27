@@ -35,14 +35,9 @@ public class Startup
         services.AddApplicationServices();
     }
 
-    public void Configure(
-        IApplicationBuilder app,
-        IWebHostEnvironment env,
-        IApiVersionDescriptionProvider apiVersionDescriptionProvider)
+    public void Configure(IApplicationBuilder app)
     {
         app.UseHealthChecks("/healthz")
-           .UseMetricServer()
-           .UseRouting()
-           .UseEndpoints(endpoints => endpoints.MapControllers());
+           .UseMetricServer();
     }
 }
