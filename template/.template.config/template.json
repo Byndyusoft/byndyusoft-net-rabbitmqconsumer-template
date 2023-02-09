@@ -1,11 +1,10 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Byndyusoft",
-    "classifications": ["Web"],
+    "classifications": [],
     "identity": "Byndyusoft.Template.RabbitMqConsumer",
     "name": "RabbitMq consumer service template",
-    "sourceName": "RabbitMqConsumerTemplate",
-    "groupIdentity": "bs",
+    "sourceName": "RabbitMqConsumerTemplate",    
     "tags": {
         "language": "C#",
         "type": "project"

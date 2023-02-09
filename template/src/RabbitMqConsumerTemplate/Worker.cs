@@ -1,16 +1,19 @@
-using Byndyusoft.Messaging.RabbitMq;
-
 namespace RabbitMqConsumerTemplate;
+
+using Byndyusoft.Messaging.RabbitMq;
+using Contracts;
 
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
+    private readonly IMessageHandler _messageHandler;
     private readonly IRabbitMqClient _rabbitMqClient;
 
-    public Worker(ILogger<Worker> logger, IRabbitMqClient rabbitMqClient)
+    public Worker(ILogger<Worker> logger, IRabbitMqClient rabbitMqClient, IMessageHandler messageHandler)
     {
         _logger = logger;
         _rabbitMqClient = rabbitMqClient;
+        _messageHandler = messageHandler;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -27,49 +30,30 @@ public class Worker : BackgroundService
         //await _rabbitMqClient.PublishAsJsonAsync(exchangeName, routingKey, message, cancellationToken: stoppingToken);
 
         // remove unnecessary steps if it's done in other place (exchange creation, queue declaration and binding)
-        await _rabbitMqClient.CreateExchangeIfNotExistsAsync(
-            exchangeName,
-            options => options.AsDurable(true).AsAutoDelete(false),
-            stoppingToken);
-
+        await _rabbitMqClient.CreateExchangeIfNotExistsAsync(exchangeName,
+                                                             options => options.AsDurable(true).AsAutoDelete(false),
+                                                             stoppingToken);
         using var consumer =
             _rabbitMqClient
-                .SubscribeAsJson<MessageContract>(queueName, OnMessage)
+                .SubscribeAsJson<MessageContract>(queueName, _messageHandler.OnMessageReceived)
                 // we can get message as JsonElement if we don't know type beforehand:
                 //.SubscribeAsJson<JsonElement>(queueName, OnMessageJsonElement) 
                 .WithDeclareSubscribingQueue(options => options.AsDurable(true).AsAutoDelete(false))
-                .WithQueueBinding(exchangeName, routingKey)
+                .WithSubscribingQueueBinding(exchangeName, routingKey)
                 .WithPrefetchCount(prefetchCount)
                 .WithDeclareErrorQueue(options => options.AsDurable(true).AsAutoDelete(false))
-                .WithConstantTimeoutRetryStrategy(retryPeriod, maxRetryCount,
-                    options => options.AsDurable(true).AsAutoDelete(false))
+                .WithConstantTimeoutRetryStrategy(retryPeriod,
+                                                  maxRetryCount,
+                                                  options => options.AsDurable(true).AsAutoDelete(false))
                 .Start();
 
         _logger.LogInformation(
-            "Consumer for queue : {queueName} with prefetch count : {prefetchCount}, retry period : {retryPeriod} and max retry count : {maxRetryCount} started",
-            prefetchCount,
-            queueName,
-            retryPeriod,
-            maxRetryCount);
+                               "Consumer for queue : {queueName} with prefetch count : {prefetchCount}, retry period : {retryPeriod} and max retry count : {maxRetryCount} started",
+                               prefetchCount,
+                               queueName,
+                               retryPeriod,
+                               maxRetryCount);
 
         await Task.Delay(Timeout.Infinite, stoppingToken);
     }
-
-    private async Task<ConsumeResult> OnMessage(MessageContract? message, CancellationToken stoppingToken)
-    {
-        _logger.LogInformation("Message received: {message}", message);
-
-        //TODO: add message processing here
-
-        return ConsumeResult.Ack;
-    }
-
-    //private async Task<ConsumeResult> OnMessageJsonElement(JsonElement message, CancellationToken stoppingToken)
-    //{
-    //    _logger.LogInformation("Message received: {message}", message);
-
-    //    //TODO: add message processing here
-
-    //    return ConsumeResult.Ack;
-    //}
 }
