@@ -9,6 +9,6 @@ public class MessageHandler : IMessageHandler
     {
         //TODO: implement message processing here
 
-        return ConsumeResult.Ack;
+        throw new NotImplementedException();
     }
 }
