@@ -11,9 +11,8 @@ Template includes:
 Projects:
 - src
   - Contracts - contracts to interaction with service
-  - RabbitMqConsumerTemplate (will be renamed to project name) - worker TODO описалово
+  - RabbitMqConsumerTemplate (will be renamed to project name) - worker that handled incoming messages
 - tests 
-  - IntegrationTests - worker integration tests (TODO add this project)
   - UnitTests - Unit Tests
 
 ## Install

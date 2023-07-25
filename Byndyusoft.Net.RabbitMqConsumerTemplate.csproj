@@ -18,7 +18,11 @@
 
 	<ItemGroup>
 		<Content Include="template\**\*;" Exclude="template\**\bin\**;template\**\obj\**;.vs\**" />
-		<Compile Remove ="**\*" />
-	</ItemGroup>	
+		<Compile Remove="**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 </Project>
