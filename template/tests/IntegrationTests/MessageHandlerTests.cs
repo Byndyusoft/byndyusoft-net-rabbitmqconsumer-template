@@ -45,13 +45,13 @@ namespace Byndyusoft.Template.IntegrationTests
         [Fact]
         public async Task AddReport_FromCurrentDomain_ShouldAddReadmeInSolutionRoot()
         {
-            // ARRANGE
+            // Arrange
             var reporter = TestCaseReadmeSolutionReporter.New();
 
-            // ACT
+            // Act
             var reportConsistency = await reporter.AddReport(Assembly.GetExecutingAssembly());
 
-            // ASSERT
+            // Assert
             reportConsistency.Should().Be(ReportConsistency.Consistent);
         }
     }
