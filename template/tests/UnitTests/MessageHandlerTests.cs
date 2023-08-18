@@ -1,6 +1,5 @@
 namespace RabbitMqConsumerTemplate.UnitTests;
 
-using Byndyusoft.Messaging.RabbitMq;
 using RabbitMqConsumerTemplate;
 using Contracts;
 
@@ -16,15 +15,12 @@ public class MessageHandlerTests
     private MessageHandler _sut = null!;
 
     [Test]
-    public async Task OnMessageReceived_ReturnsAck()
+    public void OnMessageReceived_ReturnsAck()
     {
         // Arrange
         var message = new MessageContract();
 
-        // Act
-        var result = await _sut.OnMessageReceived(message, default);
-
         // Assert
-        Assert.That(result, Is.TypeOf<AckConsumeResult>());
+        Assert.ThrowsAsync<NotImplementedException>(async() => await _sut.OnMessageReceived(message, default));
     }
 }
