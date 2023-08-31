@@ -1,11 +1,9 @@
 # RabbitMqConsumerTemplate
 
 ## Description
-
-Short service description.
+Short service description. 
 
 ## Listened queues
-
 - QueueName-1
 - QueueName-2
 
@@ -13,69 +11,52 @@ Short service description.
 
 Make sure you have installed all of the following prerequisites on your development machine:
 
-- Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already
-  installed.
-- .NET Core (version 6.0 or
-  higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/download/dotnet-core/6.0).
+- Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already installed.
+- .NET Core (version 6.0 or higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/download/dotnet-core/6.0).
 
 ## Configuration
 
 ### ConnectionStrings
-
 Rabbit connection settings.
 
 Example:
-
 ```json
-{
-  "ConnectionStrings": {
+"ConnectionStrings": {
     "Rabbit": "host=localhost;username=guest;password=guest"
   }
-}
 ```
 
 ### Logging
-
 Logging settings.
 
 Example:
-
 ```json
-{
-  "Logging": {
+"Logging": {
     "LogLevel": {
       "Default": "Information",
       "Microsoft": "Warning",
-     "Microsoft.Hosting.Lifetime": "Information"
+      "Microsoft.Hosting.Lifetime": "Information"
     }
-  }
-}
 ```
 
 ### Jaeger
-
 Jaeger settings.
 
 Example:
-
 ```json
-{
-  "Jaeger": {
+"Jaeger": {
     "AgentHost": "localhost",
     "AgentPort": 6831
   }
-}
 ```
 
 ## General folders layout
 
 ### src
-
 - RabbitMqConsumerTemplate - Worker-consumer that handled incoming messages
 - Contracts - Consumer integration contracts
 
 ### tests
-
 - UnitTests - Unit Tests
 - IntegrationTests - Consumer Integration Tests
 
