@@ -1,26 +1,24 @@
 namespace RabbitMqConsumerTemplate.UnitTests;
 
-using RabbitMqConsumerTemplate;
+using Xunit;
 using Contracts;
 
-[TestFixture]
 public class MessageHandlerTests
 {
-    [SetUp]
-    public void Setup()
+    private readonly MessageHandler _sut;
+
+    public MessageHandlerTests()
     {
         _sut = new MessageHandler();
     }
 
-    private MessageHandler _sut = null!;
-
-    [Test]
+    [Fact]
     public void OnMessageReceived_ReturnsAck()
     {
         // Arrange
         var message = new MessageContract();
 
         // Assert
-        Assert.ThrowsAsync<NotImplementedException>(async() => await _sut.OnMessageReceived(message, default));
+        Assert.ThrowsAsync<NotImplementedException>(async () => await _sut.OnMessageReceived(message, default));
     }
 }
