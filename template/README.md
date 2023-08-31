@@ -53,16 +53,17 @@ Example:
 ## General folders layout
 
 ### src
-- RabbitMqConsumerTemplate - Worker-consumer that processing messages
+- RabbitMqConsumerTemplate - Worker-consumer that handled incoming messages
 - Contracts - Consumer integration contracts
 
 ### tests
 - UnitTests - Unit Tests
+- IntegrationTests - Consumer Integration Tests
 
 ## Consumer development lifecycle
 
 - Implement logic in `src`
-- Add or adapt unit tests (prefer before and simultaneously with coding) in `tests`
+- Add or adapt unit and integration tests (prefer before and simultaneously with coding) in 'tests
 - Add or change the documentation as needed
 - Open pull request in the correct branch. Target the project's `master` branch
 
