@@ -6,14 +6,16 @@ Template includes:
 - RabbitMQ package - [Byndyusoft.Messaging.RabbitMq](https://github.com/Byndyusoft/Byndyusoft.Net.RabbitMq).
 - Package for masking sensitive data in logs and traces - [Byndyusoft.MaskedSerialization](https://github.com/Byndyusoft/Byndyusoft.MaskedSerialization).
 - Health checks using method /healthz.
-- OpenTelemetry Tracing & Metrics.
+- OpenTelemetry Tracing.
 
 Projects:
 - src
-  - Contracts - contracts to interaction with service
-  - RabbitMqConsumerTemplate (will be renamed to project name) - worker that handled incoming messages
+  - RabbitMqConsumerTemplate - Worker-consumer that handled incoming messages
+  - Contracts - Consumer integration contracts
+
 - tests 
   - UnitTests - Unit Tests
+  - IntegrationTests - Consumer Integration Tests
 
 ## Install
 ``` shell
