@@ -1,10 +1,11 @@
 # RabbitMqConsumerTemplate
 
 ## Description
+Short service description. 
 
-- Short consumer description. 
-- (TODO перевести) Сервис читает сообщения из очереди/очередей
-- (TODO перевести) Сервис пишет сообщения в очередь/очереди
+## Listened queues
+- QueueName-1
+- QueueName-2
 
 ## Prerequisites
 
@@ -39,7 +40,7 @@ Example:
 ```
 
 ### Jaeger
-Jaeger connection settings.
+Jaeger settings.
 
 Example:
 ```json
@@ -52,9 +53,8 @@ Example:
 ## General folders layout
 
 ### src
-
-- RabbitMqConsumerTemplate - Worker
-- Contracts - Rabbit contracts
+- RabbitMqConsumerTemplate - Worker-consumer that processing messages
+- Contracts - Consumer integration contracts
 
 ### tests
 - UnitTests - Unit Tests
