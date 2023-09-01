@@ -1,6 +1,6 @@
 ﻿# .NET RabbitMQ consumer service template
 
-## What includes?
+## What does it includes?
 
 Template includes:
 - RabbitMQ package - [Byndyusoft.Messaging.RabbitMq](https://github.com/Byndyusoft/Byndyusoft.Net.RabbitMq).
@@ -10,7 +10,7 @@ Template includes:
 
 Projects:
 - src
-  - RabbitMqConsumerTemplate - Worker-consumer that handled incoming messages
+  - RabbitMqConsumerTemplate - Consumer that handles incoming messages
   - Contracts - Consumer integration contracts
 
 - tests 
@@ -22,7 +22,7 @@ Projects:
 dotnet new --install Byndyusoft.Net.RabbitMqConsumerTemplate
 ```
 
-Template with name bsrabbitconsumer should be appear in your projects list
+Template with bsrabbitconsumer name should appear in your project list
 
 ## Create service
 
@@ -30,7 +30,7 @@ Template with name bsrabbitconsumer should be appear in your projects list
 dotnet new bsrabbitconsumer -o <DIRECTORY_NAME>
 ```
 
-**Note:**  Service name will be match to directory name. [Here](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new) you can see full list of available options.
+**Note:**  Service name will match to the directory name. [Here](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new) you can see full list of available options.
 
 # Maintainers
 github.maintain@byndyusoft.com

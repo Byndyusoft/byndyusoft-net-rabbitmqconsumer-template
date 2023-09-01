@@ -4,10 +4,10 @@
 
 Short service description.
 
-## Listened queues
+## Used queues
 
-- QueueName-1
-- QueueName-2
+- Service subscribed on QueueName-1
+- Service sends messages to QueueName-2
 
 ## Prerequisites
 
@@ -69,7 +69,7 @@ Example:
 
 ### src
 
-- RabbitMqConsumerTemplate - Worker-consumer that handled incoming messages
+- RabbitMqConsumerTemplate - Consumer that handles incoming messages
 - Contracts - Consumer integration contracts
 
 ### tests
