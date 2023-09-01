@@ -6,8 +6,8 @@ Short service description.
 
 ## Used queues
 
-- Service subscribed on QueueName-1
-- Service sends messages to QueueName-2
+- The service is subscribed to QueueName-1
+- The service sends messages to QueueName-2
 
 ## Prerequisites
 
