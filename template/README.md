@@ -6,8 +6,8 @@ Short service description.
 
 ## Used queues
 
-- Service subscribed on QueueName-1
-- Service sends messages to QueueName-2
+- The service is subscribed to QueueName-1
+- The service sends messages to QueueName-2
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ Example:
 }
 ```
 
-## General folders layout
+## General folder layout
 
 ### src
 
@@ -80,9 +80,9 @@ Example:
 ## Consumer development lifecycle
 
 - Implement logic in `src`
-- Add or adapt unit and integration tests (prefer before and simultaneously with coding) in 'tests
+- Add or adapt unit and integration tests in `tests`
 - Add or change the documentation as needed
-- Open pull request in the correct branch. Target the project's `master` branch
+- Open a pull request for a correct branch. Target the project's `master` branch
 
 # Maintainers
 

@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<PackageVersion>0.3.0</PackageVersion>
+		<PackageVersion>0.4.1</PackageVersion>
 		<NoDefaultExcludes>true</NoDefaultExcludes>
 		<PackageId>Byndyusoft.Net.RabbitMqConsumerTemplate</PackageId>
 		<Title>Byndyusoft.Net.RabbitMqConsumerTemplate</Title>
@@ -10,7 +10,8 @@
 		<Description>Byndyusoft .Net RabbitMq consumer service template</Description>
 		<PackageTags>dotnet-new;templates</PackageTags>
 		<TargetFramework>netstandard2.1</TargetFramework>
-
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		
 		<IncludeContentInPack>true</IncludeContentInPack>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<ContentTargetFolders>content</ContentTargetFolders>
