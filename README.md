@@ -1,6 +1,6 @@
 ﻿# .NET RabbitMQ consumer service template
 
-## What does it includes?
+## What does it include?
 
 Template includes:
 - RabbitMQ package - [Byndyusoft.Messaging.RabbitMq](https://github.com/Byndyusoft/Byndyusoft.Net.RabbitMq).
