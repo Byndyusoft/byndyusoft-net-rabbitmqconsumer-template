@@ -10,7 +10,8 @@
 		<Description>Byndyusoft .Net RabbitMq consumer service template</Description>
 		<PackageTags>dotnet-new;templates</PackageTags>
 		<TargetFramework>netstandard2.1</TargetFramework>
-
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		
 		<IncludeContentInPack>true</IncludeContentInPack>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<ContentTargetFolders>content</ContentTargetFolders>
