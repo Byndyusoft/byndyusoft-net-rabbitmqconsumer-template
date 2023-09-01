@@ -65,7 +65,7 @@ Example:
 }
 ```
 
-## General folders layout
+## General folder layout
 
 ### src
 
