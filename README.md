@@ -6,7 +6,7 @@ Template includes:
 - RabbitMQ package - [Byndyusoft.Messaging.RabbitMq](https://github.com/Byndyusoft/Byndyusoft.Net.RabbitMq).
 - Package for masking sensitive data in logs and traces - [Byndyusoft.MaskedSerialization](https://github.com/Byndyusoft/Byndyusoft.MaskedSerialization).
 - Health checks using method /healthz.
-- OpenTelemetry Tracing.
+- OpenTelemetry Tracing and Metrics.
 
 Projects:
 - src
