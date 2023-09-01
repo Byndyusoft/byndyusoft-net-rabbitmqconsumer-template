@@ -33,7 +33,8 @@ public static class Program
     {
         services.AddOpenTelemetry(ServiceName,
                                   context.Configuration.GetSection("Jaeger").Bind,
-                                  builder => builder.AddRabbitMqClientInstrumentation());
+                                  builder => builder.AddRabbitMqClientInstrumentation(),
+                                  builder => builder.AddTemplateMetrics());
 
         services.AddHostedService<Worker>();
     }

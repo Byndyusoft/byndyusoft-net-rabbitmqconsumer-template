@@ -2,7 +2,6 @@ namespace RabbitMqConsumerTemplate;
 
 using Installers;
 using Microsoft.AspNetCore.Builder;
-using Prometheus;
 
 public class Startup
 {
@@ -26,6 +25,6 @@ public class Startup
     public void Configure(IApplicationBuilder app)
     {
         app.UseHealthChecks("/healthz")
-           .UseMetricServer();
+           .UseOpenTelemetryPrometheusScrapingEndpoint();
     }
 }
