@@ -59,8 +59,7 @@ Example:
 ```json
 {
   "Jaeger": {
-    "AgentHost": "localhost",
-    "AgentPort": 6831
+    "Endpoint": "http://localhost:4317"
   }
 }
 ```
