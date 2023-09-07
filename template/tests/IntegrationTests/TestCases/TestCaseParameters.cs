@@ -7,6 +7,6 @@ namespace Byndyusoft.Template.IntegrationTests.TestCases
     /// </summary>
     public class TestCaseParameters
     {
-        public MessageContract Message { get; set; }
+        public MessageContract Message { get; set; } = default!;
     }
 }
