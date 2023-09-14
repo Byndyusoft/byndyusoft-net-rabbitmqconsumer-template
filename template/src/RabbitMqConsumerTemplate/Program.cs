@@ -32,7 +32,7 @@ public static class Program
     private static void ConfigureServicesAction(HostBuilderContext context, IServiceCollection services)
     {
         services.AddOpenTelemetry(ServiceName,
-                                  context.Configuration.GetSection("OpenTelemetry").Bind,
+                                  context.Configuration.GetSection("OtlpExporterOptions").Bind,
                                   builder => builder.AddRabbitMqClientInstrumentation(),
                                   builder => builder.AddTemplateMetrics());
 
