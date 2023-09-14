@@ -50,15 +50,15 @@ Example:
 }
 ```
 
-### Jaeger
+### OpenTelemetry
 
-Jaeger settings.
+OpenTelemetry settings.
 
 Example:
 
 ```json
 {
-  "Jaeger": {
+  "OpenTelemetry": {
     "Endpoint": "http://localhost:4317"
   }
 }
