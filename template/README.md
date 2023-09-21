@@ -50,17 +50,14 @@ Example:
 }
 ```
 
-### Jaeger
-
-Jaeger settings.
+### OpenTelemetry
+OpenTelemetry Exporter settings.
 
 Example:
-
 ```json
 {
-  "Jaeger": {
-    "AgentHost": "localhost",
-    "AgentPort": 6831
+  "OtlpExporterOptions": {
+    "Endpoint": "http://localhost:4317"
   }
 }
 ```
