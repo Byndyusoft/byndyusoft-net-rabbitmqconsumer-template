@@ -35,14 +35,13 @@ public static class Program
                                   context.Configuration.GetSection("OtlpExporterOptions").Bind,
                                   builder => builder.AddRabbitMqClientInstrumentation(),
                                   builder => builder.AddTemplateMetrics());
-
         services.AddHostedService<Worker>();
     }
 
     private static void ConfigureSerilogAction(HostBuilderContext context, LoggerConfiguration configuration)
     {
         configuration
-            .UseDefaultSettings(context.Configuration, ServiceName)
+            .UseDefaultSettings(context.Configuration)
             .UseOpenTelemetryTraces()
             .WriteToOpenTelemetry()
             .WithMaskingPolicy();

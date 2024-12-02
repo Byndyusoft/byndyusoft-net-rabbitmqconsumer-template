@@ -13,12 +13,12 @@ public class MessageHandlerTests
     }
 
     [Fact]
-    public void OnMessageReceived_ReturnsAck()
+    public async Task OnMessageReceived_ReturnsAck()
     {
         // Arrange
         var message = new MessageContract();
 
         // Assert
-        Assert.ThrowsAsync<NotImplementedException>(async () => await _sut.OnMessageReceived(message, default));
+        await Assert.ThrowsAsync<NotImplementedException>(async () => await _sut.OnMessageReceived(message, default));
     }
 }
