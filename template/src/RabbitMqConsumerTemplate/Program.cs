@@ -12,10 +12,12 @@ var services = builder.Services;
 var rabbitConnectionString = builder.Configuration.GetConnectionString("Rabbit");
 
 builder.Host.UseSerilog(ConfigureSerilogAction);
-services.AddOpenTelemetry(serviceName,
-                          builder.Configuration.GetSection("OtlpExporterOptions").Bind,
-                          _builder => _builder.AddRabbitMqClientInstrumentation(),
-                          _builder => _builder.AddTemplateMetrics());
+services.AddOpenTelemetry(
+    serviceName,
+    builder.Configuration.GetSection("OtlpExporterOptions").Bind,
+    _builder => _builder.AddRabbitMqClientInstrumentation(),
+    _builder => _builder.AddTemplateMetrics()
+);
 services.AddHostedService<Worker>();
 services.AddRabbitMqClient(options => { options.ConnectionString = rabbitConnectionString; });
 services.AddHealthChecks();

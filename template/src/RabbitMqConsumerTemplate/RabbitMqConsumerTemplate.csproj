@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="Byndyusoft.Logging" Version="3.0.1" />
-	<PackageReference Include="Byndyusoft.Logging.OpenTelemetry" Version="3.0.1" />
+    <PackageReference Include="Byndyusoft.Logging" Version="3.0.1" />
+    <PackageReference Include="Byndyusoft.Logging.OpenTelemetry" Version="3.0.1" />
     <PackageReference Include="Byndyusoft.MaskedSerialization.Serilog" Version="3.0.0" />
     <PackageReference Include="Byndyusoft.Messaging.RabbitMq" Version="0.8.2" />
     <PackageReference Include="Byndyusoft.Messaging.RabbitMq.OpenTelemetry" Version="0.8.2" />
