@@ -9,8 +9,9 @@ public class Worker : BackgroundService
     private readonly IMessageHandler _messageHandler;
     private readonly IRabbitMqClient _rabbitMqClient;
 
-    public Worker(ILogger<Worker> logger, IRabbitMqClient rabbitMqClient, IMessageHandler messageHandler)
+    public Worker(ILogger<Worker> logger, IRabbitMqClientFactory clientFactory, IMessageHandler messageHandler)
     {
+        var rabbitMqClient = clientFactory.CreateClient();
         _logger = logger;
         _rabbitMqClient = rabbitMqClient;
         _messageHandler = messageHandler;
@@ -43,7 +44,7 @@ public class Worker : BackgroundService
                 .WithPrefetchCount(prefetchCount)
                 .WithDeclareErrorQueue(options => options.AsDurable(true).AsAutoDelete(false))
                 .WithConstantTimeoutRetryStrategy(retryPeriod,
-                                                  maxRetryCount,
+                                                  (ulong?)maxRetryCount,
                                                   options => options.AsDurable(true).AsAutoDelete(false))
                 .Start();
 

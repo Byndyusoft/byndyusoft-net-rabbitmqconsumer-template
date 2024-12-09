@@ -8,7 +8,17 @@ public static class TracerProviderBuilderExtensions
     {
         var ignoredSegments = new[] { "/swagger", "/favicon", "/healthz", "/metrics" };
         return builder
-            .AddAspNetCoreInstrumentation
-                (aspnet => { aspnet.Filter = context => ignoredSegments.All(s => context.Request.Path.StartsWithSegments(s) == false); });
+            .AddHttpClientInstrumentation(
+                aspnet =>
+                {
+                    aspnet.FilterHttpWebRequest = request =>
+                        ignoredSegments.All(
+                            s => 
+                                PathString
+                                    .FromUriComponent(request.RequestUri)
+                                    .StartsWithSegments(s) == false
+                        );
+                }
+            );
     }
 }
